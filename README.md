@@ -1,1 +1,1 @@
-hhhhhh
+npm install >> npm run dev
