@@ -103,8 +103,8 @@ app.get("/users/:id", (req, res) => {
 
 app.post("/users", (req, res) => {
   const userToAdd = req.body;
-  addUser(userToAdd);
-  res.status(201).send();
+  const savedUser = addUser(userToAdd);
+  res.status(201).send(savedUser);
 });
 
 app.delete("/users/:id", (req, res) => {

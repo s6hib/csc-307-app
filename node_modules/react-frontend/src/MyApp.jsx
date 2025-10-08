@@ -16,8 +16,11 @@ function MyApp() {
     postUser(person)
       .then((res) => {
         if (res.status === 201) {
-          setCharacters([...characters, person]);
+          return res.json();
         }
+      })
+      .then((savedUser) => {
+        setCharacters([...characters, savedUser]);
       })
       .catch((error) => {
         console.log(error);
